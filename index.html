@@ -1,0 +1,229 @@
+<!doctype html>
+<html lang="fr">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
+    <meta name="theme-color" content="#0D6E6E" />
+    <meta name="description" content="Trip Match — prototype mobile testable" />
+    <title>Trip Match</title>
+    <link rel="manifest" href="manifest.json" />
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <div class="app-shell">
+      <header class="topbar">
+        <div>
+          <p class="eyebrow">Prototype mobile</p>
+          <h1>Trip Match</h1>
+        </div>
+        <button class="icon-btn" id="notifyBtn" aria-label="Notifications">🔔</button>
+      </header>
+
+      <main id="app">
+        <section class="screen active" data-screen="explorer">
+          <div class="search-row card">
+            <input type="text" placeholder="Recherche destination ou activité" />
+            <button class="icon-btn" aria-label="Filtres">⚙️</button>
+          </div>
+
+          <div class="chip-row">
+            <button class="chip active">Tout</button>
+            <button class="chip">✈️ Voyages</button>
+            <button class="chip">📍 Activités</button>
+            <button class="chip">⚡ Ce week-end</button>
+            <button class="chip">🌍 Europe</button>
+            <button class="chip">Pour moi</button>
+          </div>
+
+          <article class="hero-card card" id="heroCard">
+            <div class="hero-pattern"></div>
+            <div class="hero-content">
+              <div class="tag-row">
+                <span class="tag">😌 Chill</span>
+                <span class="tag">🍽️ Gastro</span>
+                <span class="tag">📸 Photo</span>
+              </div>
+              <p class="label">Compatibilité 94%</p>
+              <h2>Lisbonne entre filles · 12–19 juin</h2>
+              <p>4/6 places · Budget moyen · Appel vidéo avant validation</p>
+              <div class="avatars">
+                <span>AM</span><span>NC</span><span>LO</span>
+              </div>
+            </div>
+          </article>
+
+          <section class="section-block">
+            <div class="section-title">
+              <h3>Résultats pour toi</h3>
+              <button class="link-btn" id="openFilters">Voir tout</button>
+            </div>
+            <div class="result-list" id="resultList"></div>
+          </section>
+        </section>
+
+        <section class="screen" data-screen="trips">
+          <section class="section-block">
+            <div class="section-title">
+              <h3>Mes trips</h3>
+              <span class="badge-soft">2 actifs</span>
+            </div>
+            <article class="card detail-card">
+              <div class="detail-hero">
+                <div>
+                  <p class="label">Trip actif</p>
+                  <h2>Tokyo 🍣</h2>
+                  <p>Départ dans 18 jours · 4 membres</p>
+                </div>
+                <div class="compat-pill">86%</div>
+              </div>
+              <div class="mini-tabs">
+                <button class="mini-tab active">Checklist</button>
+                <button class="mini-tab">Budget</button>
+                <button class="mini-tab">Réservations</button>
+              </div>
+              <div class="checklist">
+                <label><input type="checkbox" checked /> Vol aller réservé — Sarah</label>
+                <label><input type="checkbox" checked /> Airbnb payé — Emma</label>
+                <label><input type="checkbox" /> Preuve booking manquante — Lina</label>
+              </div>
+            </article>
+
+            <article class="card candidate-card">
+              <div class="section-title compact">
+                <div>
+                  <p class="label">Candidature reçue</p>
+                  <h3>Yasmine, 29 · Bruxelles</h3>
+                </div>
+                <span class="verified">✔ Vérifiée</span>
+              </div>
+              <p>Score 91% · 😌 Chill · 🌿 Nature · ✨ Spontané</p>
+              <p class="muted">“Je voyage léger, je suis flexible sur les dates et j’adore organiser un groupe serein.”</p>
+              <div class="action-row">
+                <button class="primary-btn">Accepter</button>
+                <button class="ghost-btn">Poser une question</button>
+              </div>
+            </article>
+          </section>
+        </section>
+
+        <section class="screen" data-screen="messages">
+          <section class="section-block">
+            <div class="section-title">
+              <h3>Messages</h3>
+              <span class="badge-soft">3 non lus</span>
+            </div>
+            <div class="segmented">
+              <button class="seg active">Groupes</button>
+              <button class="seg">Privé</button>
+            </div>
+            <article class="card chat-card">
+              <div class="section-title compact">
+                <div>
+                  <h3>Lisbonne 🇵🇹</h3>
+                  <p class="muted">4/6 places · 12–19 juin</p>
+                </div>
+                <button class="primary-btn small">Appel vidéo</button>
+              </div>
+              <div class="alert-banner">⚠️ Appel vidéo à planifier avant confirmation</div>
+              <div class="chat-bubble mine">Hello, on part sur un appart centre-ville ?</div>
+              <div class="chat-bubble">Oui, et on compare aussi Airbnb / Booking.</div>
+              <div class="quick-questions">
+                <span>Budget ?</span><span>Vol ?</span><span>Rythme ?</span><span>Musique ?</span>
+              </div>
+            </article>
+          </section>
+        </section>
+
+        <section class="screen" data-screen="profile">
+          <section class="section-block">
+            <article class="card profile-card">
+              <div class="profile-header">
+                <div class="avatar-lg">FG</div>
+                <div>
+                  <h2>Flavio, 31</h2>
+                  <p>Bruxelles · FR / EN / IT</p>
+                  <div class="profile-badges">
+                    <span class="verified">✔ Vérifié</span>
+                    <span class="badge-soft">Confiance 92/100</span>
+                  </div>
+                </div>
+              </div>
+              <p class="muted">Voyageur curieux, sociable, aime les city trips cool, la photo et la gastronomie locale.</p>
+              <div class="stats-grid">
+                <div><strong>12</strong><span>Trips</span></div>
+                <div><strong>4.8</strong><span>Note</span></div>
+                <div><strong>97%</strong><span>Fiabilité</span></div>
+              </div>
+              <div class="tag-row wrap">
+                <span class="tag">😌 Chill</span>
+                <span class="tag">🍽️ Gastronomie</span>
+                <span class="tag">📸 Photo</span>
+                <span class="tag">🤓 Curieux</span>
+              </div>
+            </article>
+
+            <article class="card onboarding-card">
+              <p class="label">Onboarding / abonnement</p>
+              <h3>Débloquer toutes les fonctionnalités</h3>
+              <div class="price-grid">
+                <button class="price-card active">
+                  <strong>6,99€/mois</strong>
+                  <span>7 jours gratuits</span>
+                </button>
+                <button class="price-card">
+                  <strong>49,99€/an</strong>
+                  <span>Meilleur choix</span>
+                </button>
+              </div>
+              <button class="primary-btn full">Continuer vers vérification IA</button>
+            </article>
+          </section>
+        </section>
+      </main>
+
+      <button class="fab" id="fabBtn" aria-label="Créer">＋</button>
+
+      <nav class="bottom-nav">
+        <button class="nav-item active" data-target="explorer">🧭<span>Explorer</span></button>
+        <button class="nav-item" data-target="trips">🎒<span>Mes trips</span></button>
+        <button class="nav-item spacer" aria-hidden="true"></button>
+        <button class="nav-item" data-target="messages">💬<span>Messages</span></button>
+        <button class="nav-item" data-target="profile">👤<span>Profil</span></button>
+      </nav>
+    </div>
+
+    <div class="sheet" id="createSheet" aria-hidden="true">
+      <div class="sheet-card">
+        <div class="sheet-handle"></div>
+        <h3>Créer</h3>
+        <button class="sheet-option">
+          <strong>Créer un voyage</strong>
+          <span>Destination, dates, vibes, budget</span>
+        </button>
+        <button class="sheet-option">
+          <strong>Créer une activité</strong>
+          <span>Lieu, heure, coût, niveau requis</span>
+        </button>
+        <button class="ghost-btn full" id="closeSheet">Fermer</button>
+      </div>
+    </div>
+
+    <template id="resultTemplate">
+      <article class="card result-card">
+        <div class="result-icon"></div>
+        <div class="result-content">
+          <div class="section-title compact">
+            <div>
+              <h3 class="result-title"></h3>
+              <p class="result-meta muted"></p>
+            </div>
+            <span class="compat-pill small result-score"></span>
+          </div>
+          <div class="tag-row result-tags"></div>
+        </div>
+      </article>
+    </template>
+
+    <script src="app.js"></script>
+  </body>
+</html>
