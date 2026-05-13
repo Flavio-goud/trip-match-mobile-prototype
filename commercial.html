@@ -1,0 +1,188 @@
+<!doctype html>
+<html lang="fr">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <meta name="theme-color" content="#0b1220">
+  <meta name="description" content="Trip Match — trouvez vos compagnons de voyage idéaux et passez au premium.">
+  <title>Trip Match Premium</title>
+  <style>
+    :root{--bg:#08111f;--bg2:#0d1a2b;--card:rgba(14,23,39,.82);--line:rgba(148,163,184,.16);--text:#eff6ff;--muted:#a8b6cf;--violet:#8b5cf6;--cyan:#22d3ee;--green:#34d399;--gold:#f59e0b;--shadow:0 20px 60px rgba(0,0,0,.35)}
+    *{box-sizing:border-box} html{scroll-behavior:smooth} body{margin:0;font-family:Inter,Segoe UI,Arial,sans-serif;background:radial-gradient(circle at top right,rgba(139,92,246,.25),transparent 28%),radial-gradient(circle at top left,rgba(34,211,238,.18),transparent 24%),linear-gradient(180deg,var(--bg),var(--bg2));color:var(--text)}
+    a{text-decoration:none;color:inherit}.wrap{max-width:1180px;margin:0 auto;padding:24px}
+    .nav{display:flex;justify-content:space-between;align-items:center;gap:18px;padding:10px 0 18px}.brand{display:flex;align-items:center;gap:12px}.logo{width:42px;height:42px;border-radius:14px;background:linear-gradient(135deg,var(--violet),var(--cyan));display:grid;place-items:center;font-weight:800;box-shadow:var(--shadow)}.brand strong{display:block;font-size:18px}.brand span{display:block;color:var(--muted);font-size:13px}
+    .nav-links{display:flex;gap:14px;flex-wrap:wrap;align-items:center}.pill{padding:10px 14px;border:1px solid var(--line);border-radius:999px;color:var(--muted);font-size:14px}.btn{display:inline-flex;align-items:center;justify-content:center;gap:8px;padding:14px 18px;border-radius:14px;font-weight:700;border:1px solid transparent;transition:.22s transform,.22s opacity,.22s border-color}.btn:hover{transform:translateY(-1px)}.btn-primary{background:linear-gradient(90deg,var(--violet),#6d28d9);box-shadow:0 16px 40px rgba(109,40,217,.35)}.btn-secondary{background:linear-gradient(90deg,#0891b2,var(--cyan));box-shadow:0 16px 40px rgba(8,145,178,.26)}.btn-ghost{border-color:var(--line);background:rgba(255,255,255,.03)}
+    .hero{display:grid;grid-template-columns:1.12fr .88fr;gap:28px;align-items:center;padding:28px 0 26px}.eyebrow{display:inline-flex;align-items:center;gap:8px;padding:8px 12px;border:1px solid var(--line);border-radius:999px;color:#d8e4ff;background:rgba(255,255,255,.03);font-size:13px}.hero h1{font-size:clamp(40px,7vw,78px);line-height:.96;margin:18px 0 16px;letter-spacing:-.04em}.hero p{font-size:18px;color:var(--muted);line-height:1.6;max-width:720px}.cta-row{display:flex;gap:12px;flex-wrap:wrap;margin-top:24px}.micro{margin-top:14px;color:#c7d2fe;font-size:14px}
+    .hero-card{position:relative;padding:24px;border:1px solid var(--line);border-radius:28px;background:linear-gradient(180deg,rgba(15,23,42,.92),rgba(17,24,39,.74));box-shadow:var(--shadow);overflow:hidden}.hero-card:before{content:"";position:absolute;inset:auto -20% 62% 36%;height:180px;background:radial-gradient(circle,rgba(34,211,238,.25),transparent 58%)}.phone{position:relative;z-index:1;border:1px solid rgba(255,255,255,.08);border-radius:28px;padding:18px;background:linear-gradient(180deg,#14213a,#101827)}.phone-top{display:flex;justify-content:space-between;align-items:center;color:#cad8ef;font-size:12px;margin-bottom:14px}.match{padding:18px;border-radius:22px;background:linear-gradient(135deg,rgba(139,92,246,.22),rgba(34,211,238,.14));border:1px solid rgba(255,255,255,.08)}.match .score{display:inline-block;padding:6px 10px;border-radius:999px;background:rgba(255,255,255,.08);font-size:12px}.match h3{margin:10px 0 8px;font-size:24px}.match p{margin:0;color:#d7e3f8;font-size:14px;line-height:1.45}.chips{display:flex;gap:8px;flex-wrap:wrap;margin-top:14px}.chip{padding:8px 11px;border-radius:999px;background:rgba(255,255,255,.07);font-size:12px;color:#dbeafe}.statline{display:grid;grid-template-columns:repeat(3,1fr);gap:10px;margin-top:14px}.stat{padding:12px;border-radius:18px;background:rgba(255,255,255,.04);text-align:center}.stat strong{display:block;font-size:20px}.stat span{color:var(--muted);font-size:12px}
+    .strip{display:grid;grid-template-columns:repeat(4,1fr);gap:14px;margin:14px 0 34px}.strip .item{padding:18px;border:1px solid var(--line);border-radius:20px;background:rgba(255,255,255,.03)}.strip strong{display:block;font-size:28px}.strip span{color:var(--muted)}
+    .section{padding:26px 0}.section-head{max-width:720px;margin-bottom:18px}.section-head h2{font-size:clamp(28px,5vw,46px);margin:0 0 12px}.section-head p{color:var(--muted);line-height:1.6;font-size:17px}
+    .features{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}.feature{padding:22px;border:1px solid var(--line);border-radius:24px;background:var(--card);backdrop-filter:blur(12px)}.feature .icon{font-size:28px;margin-bottom:12px}.feature h3{margin:0 0 8px;font-size:21px}.feature p{margin:0;color:var(--muted);line-height:1.6}
+    .pricing-shell{padding:24px;border:1px solid var(--line);border-radius:30px;background:linear-gradient(180deg,rgba(15,23,42,.92),rgba(17,24,39,.78));box-shadow:var(--shadow)}.billing-toggle{display:inline-flex;padding:6px;border:1px solid var(--line);border-radius:999px;background:rgba(255,255,255,.04);gap:6px;margin-bottom:20px}.billing-toggle button{border:0;background:transparent;color:var(--muted);padding:10px 14px;border-radius:999px;font-weight:700;cursor:pointer}.billing-toggle button.active{background:#fff;color:#0f172a}
+    .pricing{display:grid;grid-template-columns:repeat(2,1fr);gap:18px}.plan{position:relative;padding:24px;border-radius:24px;border:1px solid var(--line);background:rgba(255,255,255,.035)}.plan.popular{border-color:rgba(139,92,246,.55);box-shadow:0 16px 50px rgba(109,40,217,.18)}.badge{position:absolute;top:16px;right:16px;padding:8px 10px;border-radius:999px;background:linear-gradient(90deg,var(--gold),#f97316);font-size:12px;font-weight:800;color:#1f2937}.plan h3{margin:0 0 8px;font-size:24px}.price{display:flex;align-items:end;gap:8px;margin:10px 0 12px}.price strong{font-size:46px;line-height:1}.price span{color:var(--muted)}.plan p{color:var(--muted);line-height:1.6}.plan ul{list-style:none;padding:0;margin:18px 0}.plan li{display:flex;gap:10px;align-items:flex-start;padding:8px 0;color:#dbeafe}.plan li:before{content:"✓";color:var(--green);font-weight:800}.plan .sub{font-size:13px;color:#c7d2fe;margin-top:10px}
+    .proof{display:grid;grid-template-columns:1.1fr .9fr;gap:18px}.quote,.faq,.cta{padding:24px;border-radius:24px;border:1px solid var(--line);background:var(--card)}.quote blockquote{margin:0;font-size:24px;line-height:1.5}.quote footer{margin-top:16px;color:var(--muted)}.faq h3,.cta h3{margin-top:0}.faq details{border-top:1px solid rgba(255,255,255,.08);padding:14px 0}.faq summary{cursor:pointer;font-weight:700}.faq p{color:var(--muted);line-height:1.6;margin:10px 0 0}.cta p{color:var(--muted);line-height:1.6}.cta .btns{display:flex;gap:10px;flex-wrap:wrap;margin-top:14px}
+    .footer{padding:28px 0 40px;color:var(--muted);font-size:14px}.note{margin-top:14px;padding:14px 16px;border:1px dashed rgba(148,163,184,.28);border-radius:16px;color:#dbeafe;background:rgba(255,255,255,.03)}
+    @media (max-width: 980px){.hero,.proof,.features,.pricing,.strip{grid-template-columns:1fr}.nav{align-items:flex-start;flex-direction:column}.hero h1{font-size:48px}.pricing .plan.popular{order:-1}}
+  </style>
+</head>
+<body>
+  <div class="wrap">
+    <nav class="nav">
+      <a class="brand" href="#top">
+        <div class="logo">TM</div>
+        <div>
+          <strong>Trip Match</strong>
+          <span>Voyagez avec les bonnes personnes, plus souvent.</span>
+        </div>
+      </a>
+      <div class="nav-links">
+        <a class="pill" href="./native-web-build/">Essayer la version web</a>
+        <a class="btn btn-ghost" href="#pricing">Voir les offres</a>
+      </div>
+    </nav>
+
+    <header class="hero" id="top">
+      <div>
+        <div class="eyebrow">✨ Matching intelligent · vérification · messagerie · voyages de groupe</div>
+        <h1>Le moyen le plus simple de trouver des partenaires de voyage vraiment compatibles.</h1>
+        <p>Trip Match t’aide à former des groupes fiables, alignés sur le budget, le rythme, les envies et la sécurité. Tu évites les mauvaises surprises et tu pars plus vite avec les bonnes personnes.</p>
+        <div class="cta-row">
+          <a class="btn btn-primary" href="./native-web-build/">Tester l’expérience web</a>
+          <a class="btn btn-secondary" href="#pricing">Passer au Premium</a>
+        </div>
+        <div class="micro">7 jours d’essai · annulation à tout moment · passage mensuel ou annuel</div>
+      </div>
+      <div class="hero-card">
+        <div class="phone">
+          <div class="phone-top"><span>Trip Match Premium</span><span>94% compatible</span></div>
+          <div class="match">
+            <span class="score">Top Match</span>
+            <h3>Lisbonne · 12–19 juin</h3>
+            <p>Groupe chill & gastro, budget moyen, appel vidéo avant validation, profils vérifiés.</p>
+            <div class="chips">
+              <span class="chip">Sécurité renforcée</span>
+              <span class="chip">Paiement simple</span>
+              <span class="chip">Matching affinité</span>
+            </div>
+          </div>
+          <div class="statline">
+            <div class="stat"><strong>4.8/5</strong><span>Satisfaction</span></div>
+            <div class="stat"><strong>92%</strong><span>Confiance</span></div>
+            <div class="stat"><strong>+3x</strong><span>Plus rapide</span></div>
+          </div>
+        </div>
+      </div>
+    </header>
+
+    <section class="strip">
+      <div class="item"><strong>94%</strong><span>de matching moyen sur les meilleurs profils</span></div>
+      <div class="item"><strong>7 jours</strong><span>d’essai pour tester avant de s’engager</span></div>
+      <div class="item"><strong>2 offres</strong><span>simples à comprendre et faciles à convertir</span></div>
+      <div class="item"><strong>100%</strong><span>navigateur : accessible sans installation</span></div>
+    </section>
+
+    <section class="section">
+      <div class="section-head">
+        <h2>Une offre web pensée pour donner envie de payer</h2>
+        <p>Le parcours met en avant la valeur réelle : gagner du temps, éviter les mauvais matchs, rassurer les utilisateurs et rendre la préparation d’un voyage beaucoup plus fluide.</p>
+      </div>
+      <div class="features">
+        <article class="feature"><div class="icon">🧠</div><h3>Matching utile</h3><p>Budget, rythme, personnalité, sécurité et style de voyage sont visibles dès le départ pour réduire les mauvaises surprises.</p></article>
+        <article class="feature"><div class="icon">🛡️</div><h3>Confiance premium</h3><p>Profils vérifiés, vidéo avant validation et signaux de fiabilité pour rassurer au moment où l’utilisateur hésite à passer à l’achat.</p></article>
+        <article class="feature"><div class="icon">💬</div><h3>Organisation simple</h3><p>Messagerie, checklist, décisions de groupe et prochaines étapes réunies au même endroit pour rendre l’abonnement concret.</p></article>
+      </div>
+    </section>
+
+    <section class="section" id="pricing">
+      <div class="section-head">
+        <h2>Choisis le plan qui correspond à ton rythme</h2>
+        <p>Les deux offres sont prêtes pour Stripe. J’ai laissé des boutons de paiement structurés pour brancher les vrais liens dès que tu me connectes Stripe.</p>
+      </div>
+      <div class="pricing-shell">
+        <div class="billing-toggle">
+          <button class="active" data-mode="monthly">Mensuel</button>
+          <button data-mode="yearly">Annuel</button>
+        </div>
+        <div class="pricing">
+          <article class="plan" id="plan-monthly">
+            <h3>Premium Mensuel</h3>
+            <div class="price"><strong>9,99€</strong><span>/ mois</span></div>
+            <p>Pour tester sérieusement Trip Match sans engagement long.</p>
+            <ul>
+              <li>Accès complet au matching premium</li>
+              <li>Messagerie et organisation de groupe</li>
+              <li>Priorité sur les meilleurs profils</li>
+              <li>Essai gratuit 7 jours</li>
+            </ul>
+            <a class="btn btn-primary pay-link" data-plan="monthly" href="#stripe-monthly">Choisir l’offre mensuelle</a>
+            <div class="sub">Idéal pour découvrir l’expérience et convertir vite.</div>
+          </article>
+          <article class="plan popular" id="plan-yearly">
+            <span class="badge">Meilleure valeur</span>
+            <h3>Premium Annuel</h3>
+            <div class="price"><strong>79,99€</strong><span>/ an</span></div>
+            <p>Pour les voyageurs réguliers qui veulent le meilleur rapport valeur / prix.</p>
+            <ul>
+              <li>Tout le plan mensuel</li>
+              <li>Prix par mois plus attractif</li>
+              <li>Statut prioritaire sur les nouveautés</li>
+              <li>Économie affichée pour maximiser la conversion</li>
+            </ul>
+            <a class="btn btn-secondary pay-link" data-plan="yearly" href="#stripe-yearly">Choisir l’offre annuelle</a>
+            <div class="sub">Revient à environ 6,67€/mois, donc plus facile à vendre.</div>
+          </article>
+        </div>
+        <div class="note">Paiements pas encore connectés : les boutons sont en place et prêts à recevoir les liens Stripe Checkout mensuel et annuel.</div>
+      </div>
+    </section>
+
+    <section class="section proof">
+      <article class="quote">
+        <blockquote>“La différence entre une app qu’on teste et une app qu’on paie, c’est quand l’utilisateur sent qu’elle lui évite un vrai risque ou lui fait vraiment gagner du temps.”</blockquote>
+        <footer>Positionnement commercial Trip Match · confiance, compatibilité, gain de temps.</footer>
+      </article>
+      <div class="faq">
+        <h3>Questions qui bloquent avant paiement</h3>
+        <details open><summary>Pourquoi payer si je peux juste discuter ailleurs ?</summary><p>Parce que Trip Match filtre mieux, rassure plus et centralise les décisions de groupe. L’utilisateur paie pour réduire les frictions et les mauvaises expériences.</p></details>
+        <details><summary>Puis-je annuler facilement ?</summary><p>Oui. La promesse commerciale ici est simple : essai, visibilité, puis annulation à tout moment pour réduire la peur du paiement.</p></details>
+        <details><summary>Pourquoi proposer aussi l’annuel ?</summary><p>Le plan annuel augmente la valeur perçue et améliore la conversion en mettant en avant l’économie réalisée.</p></details>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="cta">
+        <h3>Prêt à mettre le paiement en production ?</h3>
+        <p>Dès que tu me connectes à Stripe, je remplace les 2 boutons avec les vrais liens Checkout et la page devient immédiatement monétisable sur le web.</p>
+        <div class="btns">
+          <a class="btn btn-primary" href="./native-web-build/">Tester avant achat</a>
+          <a class="btn btn-ghost" href="#pricing">Préparer les paiements</a>
+        </div>
+      </div>
+    </section>
+
+    <footer class="footer">Trip Match · Web commerciale prête à brancher sur Stripe · accessible depuis n’importe quel navigateur.</footer>
+  </div>
+
+  <script>
+    const toggleButtons = document.querySelectorAll('[data-mode]');
+    const monthlyPlan = document.getElementById('plan-monthly');
+    const yearlyPlan = document.getElementById('plan-yearly');
+    toggleButtons.forEach(btn => btn.addEventListener('click', () => {
+      toggleButtons.forEach(b => b.classList.remove('active'));
+      btn.classList.add('active');
+      const yearly = btn.dataset.mode === 'yearly';
+      yearlyPlan.style.transform = yearly ? 'scale(1.01)' : 'scale(1)';
+      monthlyPlan.style.transform = yearly ? 'scale(1)' : 'scale(1.01)';
+      yearlyPlan.style.borderColor = yearly ? 'rgba(139,92,246,.7)' : 'rgba(148,163,184,.16)';
+      monthlyPlan.style.borderColor = yearly ? 'rgba(148,163,184,.16)' : 'rgba(34,211,238,.5)';
+    }));
+    document.querySelectorAll('.pay-link').forEach(link => link.addEventListener('click', (e) => {
+      if (link.getAttribute('href').startsWith('#stripe-')) {
+        e.preventDefault();
+        const plan = link.dataset.plan === 'yearly' ? 'annuelle' : 'mensuelle';
+        alert(`Le lien Stripe pour l'offre ${plan} sera branché dès que tu me connectes Stripe.`);
+      }
+    }));
+    monthlyPlan.style.borderColor = 'rgba(34,211,238,.5)';
+  </script>
+</body>
+</html>
