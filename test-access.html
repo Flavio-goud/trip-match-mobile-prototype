@@ -8,12 +8,12 @@
     :root{color-scheme:dark;--bg:#0f172a;--card:#111827;--line:#243244;--text:#e5eefc;--muted:#9fb0c9;--accent:#7c3aed;--accent2:#06b6d4}
     *{box-sizing:border-box} body{margin:0;font-family:Inter,Arial,sans-serif;background:linear-gradient(180deg,#0b1220,#111827);color:var(--text)}
     .wrap{max-width:1100px;margin:0 auto;padding:32px 20px 56px}.hero{margin-bottom:24px}.tag{display:inline-block;padding:6px 10px;border:1px solid var(--line);border-radius:999px;color:var(--muted);font-size:12px}
-    h1{font-size:clamp(28px,5vw,48px);margin:14px 0 10px}.lead{color:var(--muted);max-width:760px;line-height:1.5}.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:18px;margin-top:24px}
+    h1{font-size:clamp(28px,5vw,48px);margin:14px 0 10px}.lead{color:var(--muted);max-width:800px;line-height:1.5}.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:18px;margin-top:24px}
     .card{background:rgba(17,24,39,.92);border:1px solid var(--line);border-radius:22px;padding:22px;box-shadow:0 10px 30px rgba(0,0,0,.25)}
-    .card h2{margin:0 0 8px;font-size:22px}.card p,.card li{color:var(--muted);line-height:1.5}.btns{display:flex;flex-wrap:wrap;gap:10px;margin:16px 0 18px}
-    .btn{display:inline-block;padding:12px 16px;border-radius:12px;text-decoration:none;color:white;font-weight:700}.primary{background:linear-gradient(90deg,var(--accent),#9333ea)}.secondary{background:linear-gradient(90deg,#0891b2,var(--accent2))}
+    .card h2{margin:0 0 8px;font-size:22px}.card p,.card li{color:var(--muted);line-height:1.5}.btns{display:flex;flex-wrap:wrap;gap:10px;margin:16px 0 18px}.btns.col{flex-direction:column;align-items:flex-start}
+    .btn{display:inline-block;padding:12px 16px;border-radius:12px;text-decoration:none;color:white;font-weight:700}.primary{background:linear-gradient(90deg,var(--accent),#9333ea)}.secondary{background:linear-gradient(90deg,#0891b2,var(--accent2))}.ghost{background:#1f2937;border:1px solid #344255}
     .qr{background:white;border-radius:16px;padding:12px;width:220px;max-width:100%}.steps{margin:12px 0 0;padding-left:18px}.notice{margin-top:24px;padding:16px;border:1px dashed #36506b;border-radius:16px;color:var(--muted);background:rgba(8,15,28,.6)}
-    code{background:#0b1220;padding:2px 6px;border-radius:6px;color:#dbeafe}
+    code{background:#0b1220;padding:2px 6px;border-radius:6px;color:#dbeafe}.topqr{display:flex;gap:16px;align-items:center;flex-wrap:wrap;margin-top:18px}.small{font-size:14px;color:var(--muted)}
   </style>
 </head>
 <body>
@@ -21,43 +21,52 @@
     <div class="hero">
       <span class="tag">Trip Match · accès test</span>
       <h1>Tester Trip Match sur web et Android</h1>
-      <p class="lead">Cette page centralise les accès de test. Tu peux ouvrir la version <strong>web</strong> depuis un PC ou un mobile, et la version <strong>Android</strong> via Google Play en test fermé.</p>
+      <p class="lead">J’ai vérifié que le <strong>test fermé Google Play est actif</strong>. Pour Android, le lien qui marche est le lien de <strong>participation au test</strong>. Le lien public classique du Play Store peut rester indisponible tant que tu n’as pas rejoint le test.</p>
+      <div class="topqr">
+        <img class="qr" src="./qr-tripmatch-access.svg" alt="QR code page d'accès Trip Match">
+        <div>
+          <p><strong>QR code unique :</strong> scanne ce code pour ouvrir directement cette page depuis ton téléphone.</p>
+          <p class="small">Ensuite choisis soit la version web, soit le parcours Android Play Store.</p>
+        </div>
+      </div>
     </div>
 
     <div class="grid">
       <section class="card">
         <h2>Version web</h2>
-        <p>C’est la version la plus simple pour tester immédiatement depuis un navigateur sur PC ou téléphone.</p>
+        <p>Test immédiat sur <strong>PC</strong> ou <strong>mobile</strong> depuis le navigateur.</p>
         <div class="btns">
-          <a class="btn primary" href="./native-web-build/">Ouvrir la version web</a>
-          <a class="btn secondary" href="./">Ouvrir le prototype web</a>
+          <a class="btn primary" href="./native-web-build/">Ouvrir la vraie app web</a>
+          <a class="btn ghost" href="./">Ouvrir le prototype web</a>
         </div>
         <img class="qr" src="./qr-tripmatch-web.svg" alt="QR code version web Trip Match">
         <ol class="steps">
-          <li>Scanne le QR code avec ton téléphone</li>
-          <li>Ou ouvre directement <code>native-web-build</code></li>
-          <li>Teste l’app dans le navigateur</li>
+          <li>Scanne le QR code</li>
+          <li>Ou clique sur <strong>Ouvrir la vraie app web</strong></li>
+          <li>Teste l’application directement dans le navigateur</li>
         </ol>
       </section>
 
       <section class="card">
         <h2>Version Android (Google Play)</h2>
-        <p>Cette version passe par le test Play Store. Il faut être connecté avec une <strong>adresse invitée</strong> dans la liste des testeurs.</p>
-        <div class="btns">
-          <a class="btn primary" href="https://play.google.com/apps/testing/com.flaviogoud.tripmatchmobile">Participer au test Android</a>
+        <p>Sur Android, il faut faire le parcours dans cet ordre avec un <strong>Gmail invité comme testeur</strong>.</p>
+        <div class="btns col">
+          <a class="btn primary" href="https://play.google.com/apps/testing/com.flaviogoud.tripmatchmobile">1. Rejoindre le test fermé</a>
+          <a class="btn secondary" href="https://play.google.com/store/apps/details?id=com.flaviogoud.tripmatchmobile">2. Ouvrir la fiche Play Store après adhésion</a>
         </div>
         <img class="qr" src="./qr-tripmatch-android.svg" alt="QR code test Android Trip Match">
         <ol class="steps">
-          <li>Scanne le QR code avec le téléphone Android</li>
-          <li>Connecte-toi avec un Gmail testeur autorisé</li>
+          <li>Scanne le QR code ou clique sur <strong>Rejoindre le test fermé</strong></li>
+          <li>Connecte-toi avec une adresse testeur autorisée</li>
           <li>Accepte la participation au test</li>
-          <li>Installe l’application depuis Google Play</li>
+          <li>Ensuite utilise le bouton <strong>Ouvrir la fiche Play Store après adhésion</strong></li>
+          <li>Installe l’application</li>
         </ol>
       </section>
     </div>
 
     <div class="notice">
-      <strong>Important :</strong> la fiche publique Google Play <code>store/apps/details</code> peut rester indisponible tant que l’app est en test fermé. Le bon lien pour Android est le lien de participation au test ci-dessus.
+      <strong>Si l’installation Android échoue encore :</strong> cela vient presque toujours du compte Google utilisé sur le téléphone. Il doit être le même que l’adresse invitée dans la liste des testeurs, puis il faut d’abord rejoindre le test via le lien <code>apps/testing</code> avant d’essayer la fiche Play Store.
     </div>
   </div>
 </body>
